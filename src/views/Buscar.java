@@ -1,5 +1,7 @@
 package views;
 
+import db.controller.HospedeController;
+
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -33,6 +35,9 @@ public class Buscar extends JFrame {
 	private JLabel labelExit;
 	int xMouse, yMouse;
 
+	private HospedeController hospedeController;
+	String hospedes;
+
 	/**
 	 * Launch the application.
 	 */
@@ -53,6 +58,7 @@ public class Buscar extends JFrame {
 	 * Create the frame.
 	 */
 	public Buscar() {
+		this.hospedeController = new HospedeController();
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Buscar.class.getResource("/imagenes/lOGO-50PX.png")));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 910, 571);
@@ -203,7 +209,9 @@ public class Buscar extends JFrame {
 		btnbuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				limparTabela();
+//				preencherTabelaReservasId();
+//				preencherTabelaHospedesId();
 			}
 		});
 		btnbuscar.setLayout(null);
@@ -248,7 +256,12 @@ public class Buscar extends JFrame {
 		btnDeletar.add(lblExcluir);
 		setResizable(false);
 	}
-	
+
+	//Funções auxiliares ao frame
+	private void limparTabela() {
+		((DefaultTableModel) tbHospedes.getModel()).setRowCount(0);
+	}
+
 	//Código que permite movimentar a janela pela tela seguindo a posição de "x" e "y"	
 	 private void headerMousePressed(java.awt.event.MouseEvent evt) {
 	        xMouse = evt.getX();
