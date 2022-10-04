@@ -15,7 +15,7 @@ public class HospedeDAO {
 
     public void salvar(Hospede hospede){
         try {
-            String sql = "INSERT INTO hospedes (nome, sobrenome, data_nascimento, nacionalidade, telefone, idReserva) VALUES (?, ?, ?, ?,?,?)";
+            String sql = "INSERT INTO hospedes (nome, sobrenome, data_nascimento, nacionalidade, telefone, id_Reserva) VALUES (?, ?, ?, ?,?,?)";
 
             try (PreparedStatement pstm = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
@@ -42,7 +42,7 @@ public class HospedeDAO {
     public List<Hospede> buscar() {
         try {
             List<Hospede> hospedes = new ArrayList<>();
-            String sql = "SELECT ID, NOME, SOBRENOME, DATA_NASCIMENTO, TELEFONE, IDRESERVA FROM HOSPEDES";
+            String sql = "SELECT ID, NOME, SOBRENOME, DATA_NASCIMENTO, Nacionalidade, TELEFONE, id_reserva FROM HOSPEDES";
 
             try (PreparedStatement pstm = connection.prepareStatement(sql)) {
                 pstm.execute();
@@ -54,6 +54,24 @@ public class HospedeDAO {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public List<Hospede> buscarId(String id) {
+        List<Hospede> hospedes = new ArrayList<Hospede>();
+        try {
+
+            String sql = "SELECT id, nome, sobrenome, data_nascimento, nacionalidade, telefone, idReserva FROM hospedes WHERE id = ?";
+
+            try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+                pstm.setString(1, id);
+                pstm.execute();
+
+                recuperaHospedes(hospedes, pstm);
+            }
+            return hospedes;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void alterar(String nome, String sobrenome, Date dataNascimento, String nacionalidade, String telefone, Integer idReserva, Integer id) {
@@ -88,4 +106,6 @@ public class HospedeDAO {
             }
         }
     }
+
+
 }

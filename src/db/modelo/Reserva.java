@@ -8,6 +8,12 @@ public class Reserva {
     private String valor;
     private String formaPagamento;
 
+    public Reserva( Date dataEntrada, Date dataSaida, String valor, String formaPagamento) {
+        this.dataEntrada = dataEntrada;
+        this.dataSaida = dataSaida;
+        this.valor = valor;
+        this.formaPagamento = formaPagamento;
+    }
     public Reserva(int anInt, Date dataEntrada, Date dataSaida, String valor, String formaPagamento) {
         id = anInt;
         this.dataEntrada = dataEntrada;

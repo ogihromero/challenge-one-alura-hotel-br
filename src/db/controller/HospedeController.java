@@ -27,6 +27,10 @@ public class HospedeController {
     public List<Hospede> listar() {
         return this.hospedeDAO.buscar();
     }
+
+    public List<Hospede> listarHospedesId(String id) {
+        return this.hospedeDAO.buscarId(id);
+    }
     public void alterar(String nome, String sobrenome, Date dataNascimento, String nacionalidade, String telefone, Integer idReserva, Integer id) {
         this.hospedeDAO.alterar(nome, sobrenome, dataNascimento, nacionalidade, telefone, idReserva, id);
     }

@@ -205,32 +205,32 @@ public class MenuUsuario extends JFrame {
 	    labelFecha.setFont(new Font("Roboto", Font.PLAIN, 33));
 	    Date fechaActual = new Date(); //data atual
 	    String fecha = new SimpleDateFormat("dd/MM/yyyy").format(fechaActual); //formata a data numa string
-	    labelFecha.setText("Hoje é " + fecha); //estabelece a data na label
+	    labelFecha.setText("Hoje \u00E9 " + fecha); //estabelece a data na label
 	    
 	    JLabel lbltitulo = new JLabel("Bem-vindo");
 	    lbltitulo.setFont(new Font("Roboto", Font.BOLD, 24));
 	    lbltitulo.setBounds(302, 234, 147, 46);
 	    contentPane.add(lbltitulo);
 	    
-	    String textoDescripcion = "<html><body>Sistema de reservas de hotéis. Controle e gerencie de forma otimizada e fácil <br> o fluxo de reservas e hóspedes do hotel   </body></html>";
+	    String textoDescripcion = "<html><body>Sistema de reservas de hot\u00E9is. Controle e gerencie de forma otimizada e f\u00E1cil <br> o fluxo de reservas e h\u00F3spedes do hotel   </body></html>";
 	    JLabel labelDescripcion_0 = new JLabel(textoDescripcion);
 	    labelDescripcion_0.setFont(new Font("Roboto", Font.PLAIN, 17));
 	   
 	    labelDescripcion_0.setBounds(312, 291, 598, 66);
 	    contentPane.add(labelDescripcion_0);
 	    
-	    String textoDescricao1 = "<html><body> Esta ferramenta permitirá que você mantenha um controle completo e detalhado de suas reservas e hóspedes, você terá acesso a ferramentas especiais para tarefas específicas como:</body></html>";
+	    String textoDescricao1 = "<html><body> Esta ferramenta permitir\u00E1 que voc\u00EA mantenha um controle completo e detalhado de suas reservas e h\u00F3spedes, voc\u00EA ter\u00E1 acesso a ferramentas especiais para tarefas espec\u00EDficas como:</body></html>";
 	    JLabel labelDescricao_1 = new JLabel(textoDescricao1);
 	    labelDescricao_1.setFont(new Font("Roboto", Font.PLAIN, 17));
 	    labelDescricao_1.setBounds(311, 345, 569, 88);
 	    contentPane.add(labelDescricao_1);
 	    
-	    JLabel labelDescricao_2 = new JLabel("- Registro de Reservas e Hóspedes");
+	    JLabel labelDescricao_2 = new JLabel("- Registro de Reservas e H\u00F3spedes");
 	    labelDescricao_2.setFont(new Font("Roboto", Font.PLAIN, 17));
 	    labelDescricao_2.setBounds(312, 444, 295, 27);
 	    contentPane.add(labelDescricao_2);
 	    
-	    JLabel labelDescricao_3 = new JLabel("- Edição de Reservas e Hóspedes existentes");
+	    JLabel labelDescricao_3 = new JLabel("- Edi\u00E7\u00E3o de Reservas e H\u00F3spedes existentes");
 	    labelDescricao_3.setFont(new Font("Roboto", Font.PLAIN, 17));
 	    labelDescricao_3.setBounds(312, 482, 355, 27);
 	    contentPane.add(labelDescricao_3);
